@@ -35,7 +35,9 @@ def id_exists(file, index, value):
 # ---------- MANAGER ----------
 
 def add_room():
+    import re
     room_id = input("Room ID (R001): ") 
+    pattern = r'\b[R][0-2]{1}\d{2}\b'
     if id_exists(ROOMS_FILE, 0, room_id):
         print("Room ID already exists.")
         return
@@ -289,3 +291,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
